@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": "Event content type for Adte Events platform"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text",
+      "required": true,
+      "maxLength": 500
+    },
+    "eventUrl": {
+      "type": "string",
+      "required": true
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "eventDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "eventEndDate": {
+      "type": "datetime",
+      "required": false
+    },
+    "location": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "eventType": {
+      "type": "enumeration",
+      "enum": [
+        "conference",
+        "webinar",
+        "networking",
+        "workshop",
+        "trade-show",
+        "other"
+      ],
+      "default": "conference",
+      "required": true
+    },
+    "isPastEvent": {
+      "type": "boolean",
+      "default": false
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "registrationStatus": {
+      "type": "enumeration",
+      "enum": [
+        "open",
+        "closing-soon",
+        "closed",
+        "waitlist"
+      ],
+      "default": "open",
+      "required": true
+    },
+    "displayOrder": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}
+
